@@ -1,5 +1,5 @@
 ﻿using Csharp_Shop3;
-
+using System.Runtime.CompilerServices;
 
 internal class Program
 {
@@ -54,7 +54,7 @@ internal class Program
             Console.WriteLine(e.Message);
         }
 
-        try
+        try  //acqua Svuoto la bottiglia e la riempio per più della sua capacità per verificare la ricezione dell'errore
         {
             Acqua acquaLete = new Acqua("Acqua Lete", "Alimentari", 1, 4, 1, 6, "MonteOlimpo");
             acquaLete.stampaProdotto();
@@ -66,6 +66,20 @@ internal class Program
             Console.WriteLine(e.Message);
         }
 
+        Acqua acquaSanta = new Acqua("Acqua Santa", "Alimentari", 1, 4, 1, 6, "MonteOlimpo");
+        acquaSanta.stampaProdotto();
+        //Metodo statico
+         Acqua.convertiInGalloni(5);
+
+
+
+
+
+
+
+
+
+
         /*
         //Cibo in scatola
         CiboInScatola gattoMatto = new CiboInScatola("GattoMatto", "Alimenti per animali", 300, 2.5, 10);
@@ -76,7 +90,7 @@ internal class Program
         FruttaMix.stampaProdotto();
         */
 
-        
+
 
     }
 }

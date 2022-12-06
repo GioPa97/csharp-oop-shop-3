@@ -84,6 +84,16 @@
             }
         }
 
+        //Metodo statico per conversione litri in galloni
+        public static double convertiInGalloni(double litri)
+        {
+            double gallone=3.785;
+            double conversioneLitri = litri/gallone;
+            Console.WriteLine(litri + "l" +" " + "diventano" + " "+ Math.Round(conversioneLitri,3)+ "galloni");
+            return conversioneLitri;
+
+        }
+
         public uint riempi(uint litri)
         {
             if (litri <= this.capacità-this.litri)
