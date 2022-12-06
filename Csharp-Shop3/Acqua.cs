@@ -51,10 +51,19 @@
             this.vuota = vuota;
         }
 
+        public void Setph(uint ph)
+        {
+            this.ph = ph;
+        }
+
         //Costruttori
         public Acqua(string nome, string descrizione, double prezzo, float iva, uint litri, uint ph, string sorgente) : base(nome, descrizione, prezzo, iva)
         {
             this.litri = litri;
+            if (ph>10)
+            {
+                throw new PhException("Il ph non può essere maggiore di 10");
+            }
             this.ph = ph;
             this.sorgente = sorgente;
         }
