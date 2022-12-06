@@ -7,7 +7,7 @@
         uint litri = 1;
         uint ph = 7;
         string sorgente;
-        uint capacità = 5;
+        private uint capacità = 5;
         //stato
         bool vuota = false;
         //getter
@@ -43,6 +43,7 @@
             
             
         }
+        
         public void SetVuota(bool vuota)
         {
             this.vuota = vuota;
@@ -58,7 +59,8 @@
         {
             if (litri > this.capacità)
             {
-                throw new Exception("Questa categoria di prodotto non può avere più di 5 litri!");
+                throw new CapacitàMassimaException("Questa categoria di prodotto non può avere più di 5 litri!");
+              
             }
             this.litri = litri;
             if (ph>10)
@@ -91,7 +93,7 @@
             }
             else
             {
-                Console.WriteLine("Non puoi Aggiungere più di 5 litri!");
+                throw new RiempiLitriException("Non puoi Aggiungere più litri della capacità del contenitore!");
             }
 
             return capacità;
