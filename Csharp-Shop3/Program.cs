@@ -7,7 +7,7 @@ internal class Program
     private static void Main(string[] args)
     {
         try
-        {
+        {/*
             //Creo un prodotto e lo stampo//___________________________________________________
             prodotto prodottoUno = new prodotto("pane", "alimentari", 3.99, 4);
             prodottoUno.stampaProdotto();
@@ -29,9 +29,11 @@ internal class Program
             //monitor
             Elettrodomestico monitor = new Elettrodomestico("samsung lcd", "Elettrodomestico", "nuovo", 150.50, 22);
             monitor.stampaProdotto();
+            */
 
-
-            //acqua
+            //acqua Dichiaro che il ph + 11 per verificare la ricezione dell'errore
+            Acqua acquaBrutal = new Acqua("Acqua Brutal", "Alimentari", 2, 4, 6, 8, "Alcatraz");
+            acquaBrutal.stampaProdotto();
             Acqua acquaPanna = new Acqua("Acqua Panna", "Alimentari", 1, 4, 2, 11, "Monticchio");
             acquaPanna.stampaProdotto();
             acquaPanna.bevi();
@@ -47,9 +49,15 @@ internal class Program
             //Sacchetto frutta
             SacchettoFrutta FruttaMix = new SacchettoFrutta("FruttaMix", "Alimentari", 250, 5, 5, 10);
             FruttaMix.stampaProdotto();
-        }catch(PhException e) {
+        }
+        catch (PhException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        catch (CapacitàMassimaException e)
+        {
             Console.WriteLine(e.Message);
         }
     }
-        
+
 }

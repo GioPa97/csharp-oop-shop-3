@@ -37,14 +37,11 @@
         /// <param name="litri"></param>
         public void Setlitri(uint litri)
         {
-            if (this.litri <= this.capacità)
-            {
-                this.litri = litri;
-            }
-            else
-            {
-                Console.WriteLine("Questa categoria di prodotto non può avere più di 5 litri!");
-            }
+            
+            
+         this.litri = litri;
+            
+            
         }
         public void SetVuota(bool vuota)
         {
@@ -59,6 +56,10 @@
         //Costruttori
         public Acqua(string nome, string descrizione, double prezzo, float iva, uint litri, uint ph, string sorgente) : base(nome, descrizione, prezzo, iva)
         {
+            if (litri > this.capacità)
+            {
+                throw new Exception("Questa categoria di prodotto non può avere più di 5 litri!");
+            }
             this.litri = litri;
             if (ph>10)
             {
