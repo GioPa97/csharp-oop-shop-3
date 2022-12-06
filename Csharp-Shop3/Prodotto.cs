@@ -1,7 +1,10 @@
-﻿namespace Csharp_Shop3
+﻿using System.Runtime.CompilerServices;
+
+namespace Csharp_Shop3
 {
     public class prodotto
     {
+        
         private int codice;
         private string nome;
         private string descrizione;
@@ -10,6 +13,7 @@
         private double prezzoIvato;
 
         //GETTER//--------------------------------------------------------------------------------
+       
         public int getCodice()
         {
             return this.codice;
@@ -36,6 +40,7 @@
             return this.iva;
         }
         //SETTER//----------------------------------------------------------------------------------
+       
         private int setCodice()
         {
 
